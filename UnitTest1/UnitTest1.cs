@@ -7,7 +7,7 @@ namespace UnitTest1
     [TestClass]
     public class BrakTest
     {
-        [TestMethod]
+        [TestMethod] //Тест на сравнение результатов
         public void BrakTest1()
         {
             //arrange
@@ -27,5 +27,19 @@ namespace UnitTest1
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod] //Тест на проверку 0
+        public void TestNull()
+        {
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+            int e = 0;
+            int f = 0;
+            int result = 0;
+            Class1 class1 = new Class1();
+            int actual = class1.GetQuantityForProduct(a, b, c,d,e,f);
+            Assert.IsNull(actual);
+        }
     }
 }
