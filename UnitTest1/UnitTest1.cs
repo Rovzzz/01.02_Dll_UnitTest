@@ -7,6 +7,8 @@ namespace UnitTest1
     [TestClass]
     public class BrakTest
     {
+        ClassLibrary1.Class1 class11 = new ClassLibrary1.Class1();
+
         [TestMethod] //Тест на сравнение результатов
         public void BrakTest1()
         {
@@ -30,16 +32,19 @@ namespace UnitTest1
         [TestMethod] //Тест на проверку 0
         public void TestNull()
         {
-            int a = 0;
-            int b = 0;
-            int c = 0;
-            int d = 0;
-            int e = 0;
-            int f = 0;
-            int result = 0;
-            Class1 class1 = new Class1();
-            int actual = class1.GetQuantityForProduct(a, b, c,d,e,f);
-            Assert.IsNull(actual);
+            Assert.IsNull(class11.GetQuantityForProduct(1,1,40,100,50,10));
+        }
+
+        [TestMethod] //Тест на True
+        public void IsTrue()
+        {
+            Assert.IsTrue(Convert.ToBoolean(class11.GetQuantityForProduct(1, 1, 40, 100, 50, 10)));
+        }
+
+        [TestMethod] //Тест на False
+        public void IsFalse()
+        {
+            Assert.IsFalse(Convert.ToBoolean(class11.GetQuantityForProduct(1, 1, 40, 100, 50, 10)));
         }
     }
 }
